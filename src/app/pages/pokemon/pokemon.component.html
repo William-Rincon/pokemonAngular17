@@ -1,0 +1,94 @@
+<p>pokemons works!</p>
+<div class="container">
+    <h1>Lista De Pokemon:</h1>
+
+    <!-- <div *ngIf="pokemon">
+        <h2>{{ pokemon.name | uppercase }}</h2>
+        <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+        <p>ID: {{ pokemon.id }}</p>
+        <p>Height: {{ pokemon.height }}</p>
+        <p>Weight: {{ pokemon.weight }}</p>
+        <div *ngFor="let ability of pokemon.abilities">
+          <p>Ability: {{ ability.ability.name }}</p>
+        </div>
+      </div>
+
+  
+
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Pokemons</th>
+                <th scope="col">IMAGEN</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Altura</th>
+            </tr>
+        </thead>
+        <tbody>
+  
+            @for (pokemon  of pokemonList ; track $index) {
+            <tr>
+                <th scope="row">{{pokemon.id}}</th>
+                <td>{{pokemon.name | uppercase}}</td>
+                <td>  <img [src]="pokemon.imageUrl" alt="{{ pokemon.name }}" />
+                   </td>
+                <td>{{pokemon.weight}}</td>
+                <td>{{pokemon.height}}</td>
+          
+                
+                
+           
+                <td><button type="button" class="btn btn-outline-primary" (click)="navigateToPokemonDetails(pokemon.name)">Details <img [src]="pokemon.imagenUrl"  width="50" height="50   "/></button></td>
+               
+            </tr>
+            }
+        </tbody>
+    </table>
+    <div class="mt-5" >
+        <button class="btn btn-primary float-left btn-lg btnPagina">Previous</button>
+        <button class="btn btn-primary float-right btn-lg btnPagina">Next</button><br>
+     </div>
+</div> -->
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center mb-4">Lista de Pokémon</h1>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let pokemon of pokemonList">
+        <div class="card">
+  
+          <div class="card-body">
+            <h5 class="card-title">{{ pokemon.name | titlecase | uppercase}}        <img [src]="pokemon.imagenUrl"  width="50" height="50"  alt="{{pokemon.name}}"></h5>
+            <p class="card-text">Peso: {{ pokemon.weight }} kg</p>
+            <button type="button" class="btn btn-outline-primary" (click)="navigateToPokemonDetails(pokemon.name)">{{pokemon.name}}<img [src]="pokemon.imageUrl"  width="100" height="100   "/></button>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="pokemonList.length === 0" class="text-center mt-4">
+      <p>Cargando Pokémon...</p>
+    </div>
+  
+    <div *ngIf="pokemon" class="mt-4">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card">
+            <img [src]="pokemon.sprites.front_default"   class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ pokemon.name | titlecase }}</h5>
+              <p class="card-text">Altura: {{ pokemon.height }} dm</p>
+              <p class="card-text">Peso: {{ pokemon.weight }} hg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  

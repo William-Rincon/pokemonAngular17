@@ -1,0 +1,76 @@
+<p>home works!</p>
+<div class="container">
+  <h1 class="text-center mt-5">Bienvenido espacio Pokémon</h1>
+  <h2 class="text-center mb-5">Vamos entrenador</h2>
+  <div class="position-relative">
+    <img src="../../../assets/img/poke.jpg" class="img-fluid" id="fondo" />
+
+    <div
+      class="card-img-overlay d-flex flex-wrap justify-content-center align-items-center"
+    >
+      @for (card of cards; track $index) {
+      <!-- <div class="position-relative mb-4 col-lg- col-md-4 col-sm-6"> -->
+      <!-- class="img-fluid position-relativa top-00 start-50 translate-middle-x" -->
+
+      <div class="card card-overlay text-center">
+        <img
+          [src]="card.sprites.front_shiny"
+          id="imgcard"
+          style="z-index: 1; max-width: 100px"
+          alt="Imagen del Pokémon"
+        />
+
+        <img [src]="card.sprites.front_default" alt="Imagen del Pokemon" />
+
+        <h5 class="card-title">{{ card.name }}</h5>
+        <p class="card-text">PESO: {{ card.weight }} Kg</p>
+        <p class="card-text">ALTURA: {{ card.height }} m</p>
+        <p class="card-text">EXP: {{ card.base_experience }}</p>
+      </div>
+       <!-- Button trigger modal -->
+       <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Detalle
+      </button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer"  class="modal-dialog modal-sm">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Understood
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

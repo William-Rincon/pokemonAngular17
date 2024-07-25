@@ -1,0 +1,30 @@
+<p>pokemon-details works!</p>
+
+
+
+
+
+<div class="container" *ngIf="pokemon">
+  <h2>{{ pokemon.name | uppercase }} <img [src]="pokemon.sprites.front_shiny"width="50" height="50" /></h2>
+  <img [src]="pokemon.sprites.front_default"width="150" height="150"  alt="{{ pokemon.name }}" />
+ 
+
+  <p>ID: {{ pokemon.id }}</p>
+  <p>Height: {{ pokemon.height }}</p>
+  <p>Weight: {{ pokemon.weight }}</p>
+  <p>Base_experience: {{ pokemon.base_experience }}</p>
+  <p>Species: {{ pokemon.species }}</p>
+
+  <div *ngFor="let ability of pokemon.abilities">
+    <p>Ability: {{ ability.ability.name }}</p>
+  </div>
+  <div *ngFor="let stats of pokemon.stats">
+    <p> {{ stats.stat.name | uppercase }}:{{ stats.base_stat}},{{ stats.effort}}</p>
+  </div>
+  <!-- <div *ngFor="let species of pokemon.species">
+    <p>Species: {{ Sprites }}</p>
+  </div> -->
+</div>
+
+
+

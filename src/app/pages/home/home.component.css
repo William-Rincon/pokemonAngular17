@@ -1,0 +1,29 @@
+#fondo {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-overlay {
+  position: relative;
+  width: 350px; /* Ajustar según sea necesario */
+  background: rgba(192, 189, 160, 0.5); /* Fondo semi-transparente */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1.2); /* Sombra ligera */
+  margin-left: 100px;
+  
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
